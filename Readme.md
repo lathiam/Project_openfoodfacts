@@ -97,8 +97,3 @@ python setup_environment.py
 ```bash
 pip install -r requirements.txt
 ```
-
-## 📝 Documentation
-
-- **Configuration** : `config/README.md`
-- **Données** : `data/README.md`
