@@ -1,6 +1,9 @@
 # Variables d'environnement et credentials
 .env
 config/.env
+data/.gitignore
+config/.gitignore
+config/config.py
 *.json
 !package.json
 !package-lock.json
