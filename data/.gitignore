@@ -1,10 +1,60 @@
-# Fichiers CSV générés par le pipeline
-# Décommentez les lignes suivantes si vous ne voulez pas commiter les fichiers CSV
+# =============================================================================
+# DONNEES - NE JAMAIS COMMITER
+# =============================================================================
 
-# *.csv
-# openfood_referentiel.csv
-# openfood_referentiel_cleaned.csv
-# openfood_transformed.csv
+# Fichiers de données CSV
+*.csv
+*.xlsx
+*.xls
+*.parquet
+*.json
+*.xml
+*.yaml
+*.yml
 
-# Garder le README.md
-!README.md 
+# Fichiers de base de données
+*.db
+*.sqlite
+*.sqlite3
+*.mdb
+*.accdb
+
+# Fichiers de sauvegarde
+*.bak
+*.backup
+*.old
+*.orig
+*.save
+
+# Fichiers temporaires
+*.tmp
+*.temp
+temp/
+tmp/
+
+# Logs
+*.log
+logs/
+
+# Cache
+.cache/
+__pycache__/
+*.pyc
+*.pyo
+
+# Fichiers de test
+test_*
+*_test.*
+*_tests.*
+
+# Fichiers de développement
+dev_*
+debug_*
+sample_*
+example_*
+
+# Fichiers sensibles
+*.secret
+*.private
+secrets/
+private/

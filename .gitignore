@@ -1,26 +1,77 @@
+# =============================================================================
+# FICHIERS CONFIDENTIELS ET SENSIBLES
+# =============================================================================
+
 # Variables d'environnement et credentials
 .env
 config/.env
-data/.gitignore
-config/.gitignore
-config/config.py
+*.env
+*.env.local
+*.env.production
+*.env.development
+
+# Fichiers de credentials et clés API
 *.json
 !package.json
 !package-lock.json
+!tsconfig.json
+!jsconfig.json
+!composer.json
+!composer.lock
+!yarn.lock
+!pnpm-lock.yaml
 
 # Fichiers de credentials Google Cloud
 project-final-laka-93110-*.json
 credentials.json
 service-account-key.json
+google-credentials.json
+gcp-credentials.json
+firebase-credentials.json
 
-# Fichiers de données CSV (optionnel - décommentez si vous ne voulez pas commiter les CSV)
-# data/*.csv
+# Fichiers de configuration sensibles
+config/secrets/
+config/private/
+config/local.py
+config/settings.py
+config/database.py
+config/production.py
+config/staging.py
 
-# Fichiers Python
+# =============================================================================
+# DONNEES ET FICHIERS DE TRAVAIL
+# =============================================================================
+
+# Fichiers de données CSV (tous les CSV)
+data/*.csv
+data/*.xlsx
+data/*.xls
+data/*.parquet
+data/*.json
+data/*.xml
+data/*.yaml
+data/*.yml
+
+# Fichiers de logs et temporaires
+*.log
+logs/
+temp/
+tmp/
+.cache/
+*.tmp
+*.temp
+
+# =============================================================================
+# FICHIERS PYTHON
+# =============================================================================
+
+# Bytecode Python
 __pycache__/
 *.py[cod]
 *$py.class
 *.so
+
+# Distribution / packaging
 .Python
 build/
 develop-eggs/
@@ -34,25 +85,148 @@ parts/
 sdist/
 var/
 wheels/
+share/python-wheels/
 *.egg-info/
 .installed.cfg
 *.egg
+MANIFEST
 
-# Environnements virtuels
-venv/
+# PyInstaller
+*.manifest
+*.spec
+
+# Installer logs
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Unit test / coverage reports
+htmlcov/
+.tox/
+.nox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+*.py,cover
+.hypothesis/
+.pytest_cache/
+cover/
+
+# Translations
+*.mo
+*.pot
+
+# Django stuff:
+*.log
+local_settings.py
+db.sqlite3
+db.sqlite3-journal
+
+# Flask stuff:
+instance/
+.webassets-cache
+
+# Scrapy stuff:
+.scrapy
+
+# Sphinx documentation
+docs/_build/
+
+# PyBuilder
+.pybuilder/
+target/
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# IPython
+profile_default/
+ipython_config.py
+
+# pyenv
+.python-version
+
+# pipenv
+Pipfile.lock
+
+# poetry
+poetry.lock
+
+# pdm
+.pdm.toml
+
+# PEP 582
+__pypackages__/
+
+# Celery stuff
+celerybeat-schedule
+celerybeat.pid
+
+# SageMath parsed files
+*.sage.py
+
+# Environments
+.env
+.venv
 env/
+venv/
 ENV/
 env.bak/
 venv.bak/
 
-# IDE
+# Spyder project settings
+.spyderproject
+.spyproject
+
+# Rope project settings
+.ropeproject
+
+# mkdocs documentation
+/site
+
+# mypy
+.mypy_cache/
+.dmypy.json
+dmypy.json
+
+# Pyre type checker
+.pyre/
+
+# pytype static type analyzer
+.pytype/
+
+# Cython debug symbols
+cython_debug/
+
+# =============================================================================
+# FICHIERS DE DEVELOPPEMENT
+# =============================================================================
+
+# IDE et éditeurs
 .vscode/
 .idea/
 *.swp
 *.swo
 *~
+.project
+.classpath
+.settings/
+*.sublime-project
+*.sublime-workspace
 
-# OS
+# Fichiers de configuration locaux
+config.local.py
+settings.local.py
+local_config.py
+local_settings.py
+
+# =============================================================================
+# FICHIERS SYSTEME
+# =============================================================================
+
+# macOS
 .DS_Store
 .DS_Store?
 ._*
@@ -61,19 +235,103 @@ venv.bak/
 ehthumbs.db
 Thumbs.db
 
-# Logs
-*.log
-logs/
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+*.cab
+*.msi
+*.msix
+*.msm
+*.msp
+*.lnk
 
-# Fichiers temporaires
-*.tmp
-*.temp
-.cache/
+# Linux
+*~
+.fuse_hidden*
+.directory
+.Trash-*
+.nfs*
+
+# =============================================================================
+# FICHIERS DE SAUVEGARDE
+# =============================================================================
 
 # Fichiers de sauvegarde
 *.bak
 *.backup
+*.old
+*.orig
+*.save
+*.swp
+*.swo
+*~
 
-# Fichiers de configuration locaux
-config.local.py
-settings.local.py 
+# =============================================================================
+# FICHIERS SPECIFIQUES AU PROJET
+# =============================================================================
+
+# Fichiers de configuration sensibles du projet
+.gitignore
+.gitattributes
+.gitmodules
+
+# Fichiers de documentation sensibles
+docs/private/
+docs/internal/
+docs/confidential/
+
+# Fichiers de test avec données sensibles
+tests/data/
+tests/fixtures/
+tests/secrets/
+
+# Fichiers de déploiement sensibles
+deploy/
+deployment/
+docker-compose.override.yml
+docker-compose.prod.yml
+
+# =============================================================================
+# FICHIERS DE SECURITE
+# =============================================================================
+
+# Fichiers de sécurité
+*.key
+*.pem
+*.p12
+*.pfx
+*.crt
+*.cer
+*.der
+*.p7b
+*.p7c
+
+# Fichiers de mots de passe
+passwords.txt
+secrets.txt
+*.secret
+*.private
+
+# Fichiers de base de données
+*.db
+*.sqlite
+*.sqlite3
+*.mdb
+*.accdb
+
+# =============================================================================
+# FICHIERS DE MONITORING ET ANALYTICS
+# =============================================================================
+
+# Fichiers de monitoring
+monitoring/
+analytics/
+metrics/
+stats/
+
+# Fichiers de performance
+performance/
+benchmarks/
+profiling/ 
