@@ -39,20 +39,20 @@ def create_env_file_manual(env_file):
 
 # Google Cloud Platform
 GOOGLE_APPLICATION_CREDENTIALS_PATH=path/to/your/credentials.json
-GOOGLE_CLOUD_PROJECT_ID=project-final-laka-93110
-GOOGLE_CLOUD_DATASET_ID=Laka10
-GOOGLE_CLOUD_TABLE_ID=openfoodfacts
+GOOGLE_CLOUD_PROJECT_ID=project-id
+GOOGLE_CLOUD_DATASET_ID=dataset
+GOOGLE_CLOUD_TABLE_ID=table
 
 # API Configuration
-OPENFOODFACTS_API_URL=https://world.openfoodfacts.org
-OPENFOODFACTS_PAGE_SIZE=1000
-OPENFOODFACTS_NUM_PAGES=20
+OPENFOODFACTS_API_URL=url
+OPENFOODFACTS_PAGE_SIZE=page_size
+OPENFOODFACTS_NUM_PAGES=num_pages
 
 # File Paths
 DATA_DIRECTORY=data
-CSV_ORIGINAL_FILENAME=openfood_referentiel.csv
-CSV_CLEANED_FILENAME=openfood_referentiel_cleaned.csv
-CSV_TRANSFORMED_FILENAME=openfood_transformed.csv
+CSV_ORIGINAL_FILENAME=original_filename.csv
+CSV_CLEANED_FILENAME=cleaned_filename.csv
+CSV_TRANSFORMED_FILENAME=transformed_filename.csv
 """
     
     with open(env_file, 'w', encoding='utf-8') as f:
