@@ -9,7 +9,7 @@ config/.env
 *.env.local
 *.env.production
 *.env.development
-
+*.gitignore
 # Fichiers de credentials et clés API
 *.json
 !package.json
