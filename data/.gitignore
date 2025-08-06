@@ -1,0 +1,10 @@
+# Fichiers CSV générés par le pipeline
+# Décommentez les lignes suivantes si vous ne voulez pas commiter les fichiers CSV
+
+# *.csv
+# openfood_referentiel.csv
+# openfood_referentiel_cleaned.csv
+# openfood_transformed.csv
+
+# Garder le README.md
+!README.md 

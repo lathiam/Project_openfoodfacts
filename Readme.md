@@ -1,45 +1,116 @@
-# Projet ETL OpenFoodFacts
+# OpenFoodFacts Pipeline
 
-## 📋 Description
+Pipeline ETL pour collecter, transformer et analyser les données de l'API OpenFoodFacts avec intégration BigQuery.
 
-Ce projet met en place un pipeline ETL (Extract, Transform, Load) pour collecter, transformer et analyser les données de l'API OpenFoodFacts.
+## 🚀 Installation rapide
 
-## 🎯 Objectifs
+```bash
+# 1. Cloner le projet
+git clone <repository-url>
+cd Project_openfoodfacts
 
-- **Collecte** : Récupération des données via l'API OpenFoodFacts
-- **Transformation** : Nettoyage et structuration des données collectées
-- **Stockage** : Sauvegarde des données dans BigQuery
-- **Analyse** : Génération d'insights et de rapports
+# 2. Installer les dépendances
+pip install -r requirements.txt
 
-## 🏗️ Architecture
+# 3. Configurer l'environnement
+python setup_environment.py
+
+# 4. Lancer le pipeline
+python openfoodfacts_pipeline.py
+```
+
+## 📁 Structure
 
 ```
-┌─────────────────┐    ┌─────────────────┐    ┌─────────────────┐    ┌─────────────────┐
-│   Extraction    │───▶│  Transformation │───▶│     Loading     │───▶│    Analyse      │
-│  (API Calls)    │    │  (Data Cleaning)│    │   (BigQuery)    │    │   (Reports)     │
-└─────────────────┘    └─────────────────┘    └─────────────────┘    └─────────────────┘
+Project_openfoodfacts/
+├── config/                    # Configuration et variables d'environnement
+├── data/                      # Fichiers CSV générés
+├── openfoodfacts_pipeline.py  # Pipeline principal
+├── test_pipeline.py          # Tests
+└── setup_environment.py      # Configuration automatique
 ```
 
+## ⚙️ Configuration
 
+1. **Créer le fichier de configuration** :
+```bash
+cp config/env_example.txt config/.env
+```
 
+2. **Modifier `config/.env`** avec vos credentials :
+```env
+GOOGLE_APPLICATION_CREDENTIALS_PATH=path/to/credentials.json
+GOOGLE_CLOUD_PROJECT_ID=your-project-id
+GOOGLE_CLOUD_DATASET_ID=your-dataset
+GOOGLE_CLOUD_TABLE_ID=your-table
+```
 
-2. **Créer un environnement virtuel**
-   ```bash
-   python -m venv venv
-   source venv/bin/activate  # Sur Windows: venv\Scripts\activate
-   ```
+## 🎯 Utilisation
 
-3. **Installer les dépendances**
-   ```bash
-   pip install -r requirements.txt
-   ```
+### Pipeline complet
+```bash
+python openfoodfacts_pipeline.py
+```
 
+### Tests
+```bash
+python test_pipeline.py
+```
 
+### Vérification des imports
+```bash
+python check_imports.py
+```
 
-## 📊 Technologies Utilisées
+## 🔧 Fonctionnalités
 
-- **Python** : Langage principal
-- **BigQuery** : Base de données cloud
-- **OpenFoodFacts API** : Source de données
-- **Pandas** : Manipulation des données
--
+- **Extraction** : Récupération des données depuis l'API OpenFoodFacts
+- **Transformation** : Nettoyage, traductions, scores nutritionnels
+- **Chargement** : Intégration dans Google BigQuery
+- **Sauvegarde** : Fichiers CSV organisés dans `data/`
+
+## 🔒 Sécurité
+
+- Variables d'environnement dans `config/.env` (protégé par .gitignore)
+- Credentials Google Cloud sécurisés
+- Fichiers sensibles exclus du versioning
+
+## 📊 Données générées
+
+- `data/openfood_referentiel.csv` : Données brutes
+- `data/openfood_referentiel_cleaned.csv` : Données nettoyées
+- `data/openfood_transformed.csv` : Données transformées
+
+## 🐛 Troubleshooting
+
+### Problème de configuration
+```bash
+python setup_environment.py
+```
+
+### Problème de credentials
+1. Vérifiez que le fichier de credentials existe
+2. Vérifiez le chemin dans `config/.env`
+3. Vérifiez les permissions du fichier
+
+### Problème de dépendances
+```bash
+pip install -r requirements.txt
+```
+
+## 📝 Documentation
+
+- **Configuration** : `config/README.md`
+- **Données** : `data/README.md`
+
+## 🤝 Contribution
+
+1. Fork le projet
+2. Créez une branche feature (`git checkout -b feature/AmazingFeature`)
+3. Committez vos changements (`git commit -m 'Add some AmazingFeature'`)
+4. Push vers la branche (`git push origin feature/AmazingFeature`)
+5. Ouvrez une Pull Request
+
+## 📄 Licence
+
+Ce projet est sous licence MIT. Voir le fichier `LICENSE` pour plus de détails.

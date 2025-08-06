@@ -1,0 +1,26 @@
+# Configuration OpenFoodFacts Pipeline
+# Copiez ce fichier vers .env et remplissez vos vraies valeurs
+
+# Google Cloud Platform
+GOOGLE_APPLICATION_CREDENTIALS_PATH=path/to/your/credentials.json
+GOOGLE_CLOUD_PROJECT_ID=project-final-laka-93110
+GOOGLE_CLOUD_DATASET_ID=Laka10
+GOOGLE_CLOUD_TABLE_ID=openfoodfacts
+
+# API Configuration
+OPENFOODFACTS_API_URL=https://world.openfoodfacts.org
+OPENFOODFACTS_PAGE_SIZE=1000
+OPENFOODFACTS_NUM_PAGES=20
+
+# File Paths
+DATA_DIRECTORY=data
+CSV_ORIGINAL_FILENAME=openfood_referentiel.csv
+CSV_CLEANED_FILENAME=openfood_referentiel_cleaned.csv
+CSV_TRANSFORMED_FILENAME=openfood_transformed.csv
+
+# Database Configuration (si nécessaire)
+# DB_HOST=localhost
+# DB_PORT=5432
+# DB_NAME=openfoodfacts
+# DB_USER=username
+# DB_PASSWORD=password 
